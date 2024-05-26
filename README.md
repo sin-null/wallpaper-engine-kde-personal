@@ -1,6 +1,5 @@
 # wallpaper-engine-kde-personal
 Steps to reproduce an rpm of the project wallpaper-engine-kde by Catsout on an Immutable OS (Aurora Tested):
-
 1. Create a container to install the dependencies necessary to build the rpm. In a terminal run:
    
 podman run -it docker.io/library/fedora
@@ -46,5 +45,8 @@ mkdir /var/home/$USER/.local/share/plasma/wallpapers/com.github.catsout.wallpape
 Lastly, you can use the already cloned repository from our container (diff/wallpaper-engine-kde-plugin), and from it you need these files/folders from the plugins folder: contents folder, metadata.desktop and metadata.json. And just move those files/folder into the previously created folder.
 
 Now reboot your machine, and hopefully when you go to the wallpapers setting, under Wallpaper type, should be Wallpaper Engine for KDE! Feel free to delete the container as well with: podman rmi -f fedora
+
+Based off of this repository: https://github.com/KyleGospo/wallpaper-engine-kde-plugin , I was able to create a working .spec file.
+Package this repository is created for: https://github.com/catsout/wallpaper-engine-kde-plugin
 
 
