@@ -9,7 +9,7 @@ For ublue-OS's, the containers are stored in /var/home/$USER/.local/share/contai
 
 2.  Going back to the terminal with the running container. First install all the necessary dependencies:
    
-sudo dnf install  mpv-libs-devel vulkan-headers plasma-workspace-devel libplasma-devel lz4-devel qt6-qtbase-private-devel qt6-qtdeclarative-devel git plasma-workspace gstreamer1-libav mpv-libs lz4 python3-websockets qt6-qtwebchannel-devel qt6-qtwebsockets-devel nano rpmdevtools
+sudo dnf install  mpv-libs-devel vulkan-headers plasma-workspace-devel libplasma-devel lz4-devel qt6-qtbase-private-devel qt6-qtdeclarative-devel git plasma-workspace gstreamer1-libav mpv-libs lz4 python3-websockets qt6-qtwebchannel-devel qt6-qtwebsockets-devel nano rpmdevtools extra-cmake-modules
 
 Secondly, clone the github repo like so:
 
