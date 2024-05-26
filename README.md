@@ -9,15 +9,14 @@ For ublue-OS's, the containers are stored in /var/home/$USER/.local/share/contai
 
 2.  Going back to the terminal with the running container. First install all the necessary dependencies:
    
-sudo dnf install  mpv-libs-devel vulkan-headers plasma-workspace-devel libplasma-devel lz4-devel qt6-qtbase-private-devel qt6-qtdeclarative-devel git plasma-workspace gstreamer1-libav mpv-libs lz4 python3-websockets qt6-qtwebchannel-devel qt6-qtwebsockets-devel nano rpmdevtools extra-cmake-modules
+sudo dnf install mpv-libs-devel vulkan-headers plasma-workspace-devel libplasma-devel lz4-devel qt6-qtbase-private-devel qt6-qtdeclarative-devel git nano rpmdevtools extra-cmake-modules
 
 Secondly, clone the github repo like so:
 
 git clone --branch qt6 https://github.com/catsout/wallpaper-engine-kde-plugin 
 
 And move into it and run these commands: \
-cd wallpaper-engine-kde-plugin \
-git submodule update --init --recursive \
+cd wallpaper-engine-kde-plugin && git submodule update --init --recursive \
 kpackagetool6 -i ./plugin 
 
 3. We now need to edit the rpm install script, as it is outdated. Enter the command:
@@ -30,7 +29,7 @@ Once open, refer to the spec file attached above to this repository. Simply, del
 
 mkdir -p /root/rpmbuild/SOURCES 
 
-rpmbuild --define="commit $(git rev-parse HEAD)" --define="glslang_ver 11.8.0" --undefine=_disable_source_fetch -ba ./rpm/wek.spec 
+rpmbuild --define="commit $(git rev-parse HEAD)" --undefine=_disable_source_fetch -ba ./rpm/wek.spec 
 
 5. Exiting the container, we shall now go to the location of the container file on our Host OS, mentioned above. (/var/home/$USER/.local/share/containers/storage/overlay). Once you've found the correct container folder, open it, and navigate to:
 
