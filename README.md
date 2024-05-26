@@ -13,12 +13,12 @@ sudo dnf install  mpv-libs-devel vulkan-headers plasma-workspace-devel libplasma
 
 Secondly, clone the github repo like so:
 
-github clone --branch qt6 https://github.com/catsout/wallpaper-engine-kde-plugin 
+git clone --branch qt6 https://github.com/catsout/wallpaper-engine-kde-plugin 
 
 And move into it and run these commands: \
 cd wallpaper-engine-kde-plugin \
 git submodule update --init --recursive \
-kpackagetool5 -i ./plugin 
+kpackagetool6 -i ./plugin 
 
 3. We now need to edit the rpm install script, as it is outdated. Enter the command:
 
@@ -26,8 +26,9 @@ nano rpm/wek.spec
 
 Once open, refer to the spec file attached above to this repository. Simply, delete everything currently in the containers .spec file, and replace it with this repo's spec contents.
 
-4. Run the rpm build file:
+4. Create rpmbuilds folder and run the rpm build file:
 
+mkdir -p /root/rpmbuild/SOURCES \n
 rpmbuild --define="commit $(git rev-parse HEAD)" \
     --define="glslang_ver 11.8.0" \
     --undefine=_disable_source_fetch \
