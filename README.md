@@ -28,11 +28,9 @@ Once open, refer to the spec file attached above to this repository. Simply, del
 
 4. Create rpmbuilds folder and run the rpm build file:
 
-mkdir -p /root/rpmbuild/SOURCES \
-rpmbuild --define="commit $(git rev-parse HEAD)" \
-    --define="glslang_ver 11.8.0" \
-    --undefine=_disable_source_fetch \
-    -ba ./rpm/wek.spec
+mkdir -p /root/rpmbuild/SOURCES 
+
+rpmbuild --define="commit $(git rev-parse HEAD)" --define="glslang_ver 11.8.0" --undefine=_disable_source_fetch -ba ./rpm/wek.spec 
 
 5. Exiting the container, we shall now go to the location of the container file on our Host OS, mentioned above. (/var/home/$USER/.local/share/containers/storage/overlay). Once you've found the correct container folder, open it, and navigate to:
 
