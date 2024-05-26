@@ -3,7 +3,7 @@ Steps to reproduce an rpm of the project wallpaper-engine-kde by Catsout on an I
 
 1.) Create a container to install the dependencies necessary to build the rpm. In a terminal run: \
 podman run -it docker.io/library/fedora \
-For ublue-OS's, the containers are stored in /var/home/$USER/.local/share/containers/storage/overlay. The folder you'll need in a couple steps is the latest one that's been modified.
+For ublue-OS's, the containers are stored in /var/home/$USER/.local/share/containers/storage/overlay.
 
 3.) Going back to the terminal with the running container. \
 First install all the necessary dependencies: \
