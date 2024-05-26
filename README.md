@@ -1,5 +1,5 @@
 # wallpaper-engine-kde-personal
-Steps to reproduce an rpm of the project wallpaper-engine-kde by Catsout on an Immutable OS (Aurora/Bazzite):
+Steps to reproduce an rpm of the project wallpaper-engine-kde by Catsout on an Immutable OS (Aurora Tested):
 
 1. Create a container to install the dependencies necessary to build the rpm. In a terminal run:
    
