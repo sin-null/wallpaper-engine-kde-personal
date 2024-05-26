@@ -48,6 +48,6 @@ mkdir /var/home/$USER/.local/share/plasma/wallpapers/com.github.catsout.wallpape
 
 Lastly, you can use the already cloned repository from our container (diff/wallpaper-engine-kde-plugin), and from it you need these files/folders from the plugins folder: contents folder, metadata.desktop and metadata.json. And just move those files/folder into the previously created folder.
 
-Now reboot your machine, and hopefully when you go to the wallpapers setting, under Wallpaper type, should be Wallpaper Engine for KDE!
+Now reboot your machine, and hopefully when you go to the wallpapers setting, under Wallpaper type, should be Wallpaper Engine for KDE! Feel free to delete the container as well with: podman rmi -f fedora
 
 
