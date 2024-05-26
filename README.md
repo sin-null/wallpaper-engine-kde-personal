@@ -28,7 +28,7 @@ Once open, refer to the spec file attached above to this repository. Simply, del
 
 4. Create rpmbuilds folder and run the rpm build file:
 
-mkdir -p /root/rpmbuild/SOURCES \n
+mkdir -p /root/rpmbuild/SOURCES \
 rpmbuild --define="commit $(git rev-parse HEAD)" \
     --define="glslang_ver 11.8.0" \
     --undefine=_disable_source_fetch \
