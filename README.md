@@ -46,7 +46,7 @@ Lastly, you can use the already cloned repository from our container (diff/wallp
 
 Now reboot your machine, and hopefully when you go to the wallpapers setting, under Wallpaper type, should be Wallpaper Engine for KDE! Feel free to delete the container as well with: podman rmi -f fedora
 
-Based off of this repository: https://github.com/KyleGospo/wallpaper-engine-kde-plugin , I was able to create a working .spec file.
+Based off of this repository: https://github.com/KyleGospo/wallpaper-engine-kde-plugin , I was able to create a working .spec file. \
 Package this repository is created for: https://github.com/catsout/wallpaper-engine-kde-plugin
 
 
