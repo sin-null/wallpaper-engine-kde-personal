@@ -6,8 +6,7 @@ podman run -it docker.io/library/fedora \
 For ublue-OS's, the containers are stored in /var/home/$USER/.local/share/containers/storage/overlay. There will be a couple folders here, take note of the one which has been modified most recently.
 
 2.  Going back to the terminal with the running container. First install all the necessary dependencies: \
-sudo dnf install mpv-libs-devel vulkan-headers plasma-workspace-devel kf5-plasma-devel lz4-devel qt5-qtbase-private-devel qt5-qtx11extras-devel plasma-workspace gstreamer1-libav mpv-libs lz4 python3-websockets qt5-qtwebchannel-devel qt5-qtwebsockets-devel git rpmdevtools nano
-
+sudo dnf install mpv-libs-devel vulkan-headers plasma-workspace-devel kf5-plasma-devel lz4-devel qt5-qtbase-private-devel qt5-qtx11extras-devel plasma-workspace gstreamer1-libav mpv-libs lz4 python3-websockets qt5-qtwebchannel-devel qt5-qtwebsockets-devel git rpmdevtools nano \
 Secondly, clone the github repo like so: \ 
 github clone --branch qt6 https://github.com/catsout/wallpaper-engine-kde-plugin \
 And move into it: \
