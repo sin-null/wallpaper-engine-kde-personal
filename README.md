@@ -1,5 +1,8 @@
 # wallpaper-engine-kde-personal
-Steps to reproduce an rpm of the project wallpaper-engine-kde by Catsout on an Immutable OS (Aurora Tested):
+Steps to reproduce an rpm of the project wallpaper-engine-kde by Catsout on an Immutable OS (Aurora Tested): \
+READ: IF YOU ARE ON BAZZITE AND ARE HAVING ISSUES WITH PACKAGE CONFLICTS INVOLVING MESA READ THESE FORUM POSTS: \
+https://universal-blue.discourse.group/t/how-to-install-wallpaper-engine-on-bazzite-3/1894/16
+
 1. Create a container to install the dependencies necessary to build the rpm. In a terminal run:
    
 podman run -it docker.io/library/fedora
