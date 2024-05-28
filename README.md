@@ -16,7 +16,7 @@ sudo dnf install mpv-libs-devel vulkan-headers plasma-workspace-devel libplasma-
 
 Secondly, clone wallpaper-engine-kde-plugin repository, as we'll need it to build the RPM and grab the plugins folder later:
 
-git clone --single-branch --branch qt6 https://github.com/catsout/wallpaper-engine-kde-plugin.git && cd wallpaper-engine-kde-plugin && git submodule update --init --recursive
+git clone --single-branch --branch qt6 https://github.com/catsout/wallpaper-engine-kde-plugin.git && cd wallpaper-engine-kde-plugin && git submodule update --init --recursive \
 kpackagetool6 -i ./plugin
 
 3. We now need to edit the rpm install script, as it is outdated. Enter the command:
