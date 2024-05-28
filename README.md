@@ -40,7 +40,7 @@ rpm-ostree install {RPM_FILE_NAME}.rpm
 
 Before rebooting, we also need to create a plugins folder:
 
-mkdir /var/home/$USER/.local/share/plasma/wallpapers/com.github.catsout.wallpaperEngineKde
+mkdir -p /var/home/$USER/.local/share/plasma/wallpapers/com.github.catsout.wallpaperEngineKde
 
 Lastly, go back to the container folder, wallpaper-engine-kde-plugin we cloned (diff/wallpaper-engine-kde-plugin) in the 2nd step, and go into the plugin folder. From it you need to move all the contents, specifically : contents folder, metadata.desktop and metadata.json. And put those files/folder into the folder created before/above.
 
