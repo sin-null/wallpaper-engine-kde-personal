@@ -19,7 +19,7 @@ Requires: plasma-workspace gstreamer1-libav mpv-libs lz4 python3-websockets qt6-
 %prep
 git clone --single-branch --branch qt6 https://github.com/catsout/wallpaper-engine-kde-plugin.git
 cd wallpaper-engine-kde-plugin && git submodule update --init --recursive  && cd ..
-mv -v  wallpaper-engine-kde-plugin/* ./ && rm -rf wallpa
+mv -v  wallpaper-engine-kde-plugin/* ./ && rm -rf wallpaper-engine-kde-plugin
 
 %global _enable_debug_package 0
 %global debug_package %{nil}
