@@ -26,7 +26,7 @@ cd wallpaper-engine-kde-personal
 
 3. Create rpmbuilds folder and run the rpm build file:
 
-rpmdev-setuptree
+rpmdev-setuptree \
 rpmbuild --define="commit $(git rev-parse HEAD)" --undefine=_disable_source_fetch -ba ./wek.spec 
 
 4. Exiting the container, we shall now go to the location of the container file on our Host OS, mentioned above. (/var/home/$USER/.local/share/containers/storage/overlay). Once you've found the correct container folder, open it, and navigate to:
