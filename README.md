@@ -14,26 +14,27 @@ For ublue-OS's, the containers are stored in /var/home/$USER/.local/share/contai
    
 sudo dnf install mpv-libs-devel vulkan-headers plasma-workspace-devel libplasma-devel lz4-devel qt6-qtbase-private-devel qt6-qtdeclarative-devel git nano rpmdevtools extra-cmake-modules
 
-Secondly, clone the github repo to get my .spec file and clone Catsout repository, as we'll need their plugins folder later:
+Secondly, clone wallpaper-engine-kde-plugin repository, as we'll need it to build the RPM and grab the plugins folder later:
 
-mkdir build_wallpaper_rpm && cd build_wallpaper_rpm \
-git clone https://github.com/Broken-Void/wallpaper-engine-kde-personal.git \
-git clone --single-branch --branch qt6 https://github.com/catsout/wallpaper-engine-kde-plugin.git && cd wallpaper-engine-kde-plugin && git submodule update --init --recursive && cd .. \
-mv -v  wallpaper-engine-kde-plugin/plugin/* ./ && rm -rf wallpaper-engine-kde-plugin
+git clone --single-branch --branch qt6 https://github.com/catsout/wallpaper-engine-kde-plugin.git && cd wallpaper-engine-kde-plugin && git submodule update --init --recursive
+kpackagetool6 -i ./plugin
 
-And move into my repository: \
-cd wallpaper-engine-kde-personal 
+3. We now need to edit the rpm install script, as it is outdated. Enter the command:
+   
+nano rpm/wek.spec
 
-3. Create rpmbuilds folder and run the rpm build file:
+Once open, refer to the spec file attached above to this repository. Simply, delete everything currently in the containers .spec file, and replace it with this repo's spec contents.
+
+4. Create rpmbuilds folder and run the rpm build file:
 
 rpmdev-setuptree \
-rpmbuild --define="commit $(git rev-parse HEAD)" --undefine=_disable_source_fetch -ba ./wek.spec 
+rpmbuild --define="commit $(git rev-parse HEAD)" --undefine=_disable_source_fetch -ba ./rpm/wek.spec 
 
-4. Exiting the container, we shall now go to the location of the container file on our Host OS, mentioned above. (/var/home/$USER/.local/share/containers/storage/overlay). Once you've found the correct container folder, open it, and navigate to:
+5. Exiting the container, we shall now go to the location of the container file on our Host OS, mentioned above. (/var/home/$USER/.local/share/containers/storage/overlay). Once you've found the correct container folder, open it, and navigate to:
 
 {container-location}/diff/root/rpmbuild/RPMS/x86_64 
 
-5. Here lies our RPM file we need. Copy it, and paste it anywhere you please, I placed it in my Downloads folder. Open the terminal in the location of the RPM package, and run:
+6. Here lies our RPM file we need. Copy it, and paste it anywhere you please, I placed it in my Downloads folder. Open the terminal in the location of the RPM package, and run:
 
 rpm-ostree install {RPM_FILE_NAME}.rpm
 
@@ -41,7 +42,7 @@ Before rebooting, we also need to create a plugins folder:
 
 mkdir /var/home/$USER/.local/share/plasma/wallpapers/com.github.catsout.wallpaperEngineKde
 
-Lastly, go back to the container folder, build_wallpaper_rpm we created (diff/build_wallpaper_rpm) in the 2nd step, and from it you need to move these files/folders : contents folder, metadata.desktop and metadata.json. And put those files/folder into the folder created before.
+Lastly, go back to the container folder, wallpaper-engine-kde-plugin we cloned (diff/wallpaper-engine-kde-plugin) in the 2nd step, and go into the plugin folder. From it you need to move all the contents, specifically : contents folder, metadata.desktop and metadata.json. And put those files/folder into the folder created before/above.
 
 Now reboot your machine, and hopefully when you go to the wallpapers setting, under Wallpaper type, should be Wallpaper Engine for KDE! Feel free to delete the container as well with: podman rmi -f fedora
 
